@@ -7,6 +7,11 @@
 - [Initialize a Git repository](#initialize-a-git-repository)
 - [How to add files to the Staging area](#how-to-add-files-to-the-staging-area)
 - [How to remove files from the Staging area](#how-to-remove-files-from-the-staging-area)
+- [`.gitignore` file](#gitignore-file)
+  - [What is .gitignore?](#what-is-gitignore)
+  - [Main purposes of `.gitignore`](#main-purposes-of-gitignore)
+  - [Very important rule (commonly misunderstood)](#very-important-rule-commonly-misunderstood)
+  - [Example `.gitignore` (Python / Flask project)](#example-gitignore-python--flask-project)
 - [How to make commits](#how-to-make-commits)
   - [Git Shortcut: commit all tracked files](#git-shortcut-commit-all-tracked-files)
   - [Git Shortcut: commit with a short message](#git-shortcut-commit-with-a-short-message)
@@ -188,6 +193,47 @@ git reset HEAD models/user.py
 
 ```
 git checkout -- models/user.py
+```
+
+# `.gitignore` file
+
+## What is .gitignore?
+
+- `.gitignore` is a file that tells Git which files or directories it should not track, stage, or commi
+- In other words: “These files are not part of the source code. Please ignore them.”
+
+## Main purposes of `.gitignore`
+
+- Prevent tracking unnecessary files
+- Protect sensitive information
+- Keep the repository clean
+- Make collaboration easier
+
+## Very important rule (commonly misunderstood)
+
+- `.gitignore` does NOT affect files that are already tracked.
+
+## Example `.gitignore` (Python / Flask project)
+
+```
+# Python
+__pycache__/
+*.pyc
+
+# Environment
+.env
+venv/
+
+# Logs
+*.log
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
 ```
 
 # How to make commits
