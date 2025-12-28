@@ -12,6 +12,9 @@
   - [Git Shortcut: commit with a short message](#git-shortcut-commit-with-a-short-message)
   - [A technicality about commits](#a-technicality-about-commits)
 - [How to undo local commits](#how-to-undo-local-commits)
+  - [git revert](#git-revert)
+  - [git reset](#git-reset)
+  - [How do you use them?](#how-do-you-use-them)
 
 # WHAT IS GIT
 
@@ -231,3 +234,61 @@ git commit -am "Your message here."
   - By telling Git to get rid of a commit entirely.
 
 - These are known as `git revert` and `git reset`.
+
+## git revert
+
+- This tells Git to create **a new commit** which exactly undoes the changes of a previous commit.
+
+- This is a **safe undo**. After all, if you decide you didn't want to revert your commit after all, you can revert the revert.
+
+- In addition, when you start sharing your commits with other people, it's normal for contributors to add commits, but it is not normal for contributors to remove commits.
+
+- Therefore you should use git revert in either of the following cases:
+
+  - You want the flexibility to bring back your changes later.
+  - You are using a remote repository (more on that soon).
+
+## git reset
+
+- This tells Git to **get rid of a commit entirely**.
+
+- This is not a **safe undo**. It is not possible to bring back your commit after it's been deleted.
+
+- If you're sharing your repository with others, they will have problems when you delete commits.
+
+- Therefore, you can use git reset when both of the following are true:
+
+  - You are sure you never want the commit you're deleting again.
+  - You are not sharing the repository with others.
+
+- Would recommend using git revert almost every time!
+
+## How do you use them?
+
+- First, you need to know which commit you want to undo. Usually it's the last commit you've made, but it can be one before that.
+
+- You need to find the c**ommit hash**: a unique identifying code that each commit has.
+
+- We can find it by using `git log`. In this example we've got two commits, and this would be the result:
+
+```
+git log
+
+commit ae77aedd4cec3b0a6c130a2699dbb7003257033b (HEAD -> master)
+Author: Jose Salvatierra <jose@tecladocode.com>
+Date:   Mon Dec 16 12:23:26 2019 +0000
+
+    Added changes to app.py to start the Flask app on Debug mode.
+
+commit 0919fd47cae93ac2003b2865f8ffdd1b72e092d3
+Author: Jose Salvatierra <jose@tecladocode.com>
+Date:   Fri Dec 13 13:21:19 2019 +0000
+
+    Load environment variables from dotenv file locally.
+```
+
+- Next we can pass the first few characters of that to either `git revert` or `git reset`:
+
+```
+git revert ae77aedd
+```
