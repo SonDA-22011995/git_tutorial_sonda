@@ -120,8 +120,6 @@ git status
 
 # Initialize a Git repository
 
-sonda vo doi
-
 ```
 git init
 ```
