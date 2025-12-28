@@ -11,6 +11,7 @@
   - [What is .gitignore?](#what-is-gitignore)
   - [Main purposes of `.gitignore`](#main-purposes-of-gitignore)
   - [Very important rule (commonly misunderstood)](#very-important-rule-commonly-misunderstood)
+  - [Correct way to stop tracking a file](#correct-way-to-stop-tracking-a-file)
   - [Example `.gitignore` (Python / Flask project)](#example-gitignore-python--flask-project)
 - [How to make commits](#how-to-make-commits)
   - [Git Shortcut: commit all tracked files](#git-shortcut-commit-all-tracked-files)
@@ -212,6 +213,13 @@ git checkout -- models/user.py
 ## Very important rule (commonly misunderstood)
 
 - `.gitignore` does NOT affect files that are already tracked.
+
+## Correct way to stop tracking a file
+
+```
+git rm --cached config.py
+git commit -m "Stop tracking config.py"
+```
 
 ## Example `.gitignore` (Python / Flask project)
 
