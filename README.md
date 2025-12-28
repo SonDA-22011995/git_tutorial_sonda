@@ -5,7 +5,7 @@
   - [Remote](#remote)
 - [What is a Git commit?](#what-is-a-git-commit)
 - [How to add files to the Staging area](#how-to-add-files-to-the-staging-area)
-- [How to remove files from the Staging area](#how-to-remove-files-from-the-staging-area)
+- [How to remove files from the Staging area 123](#how-to-remove-files-from-the-staging-area-123)
 
 # WHAT IS GIT
 
@@ -92,4 +92,4 @@ git add --all
 git add -A
 ```
 
-# How to remove files from the Staging area
+# How to remove files from the Staging area 123
