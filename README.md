@@ -4,12 +4,14 @@
   - [Committed](#committed)
   - [Remote](#remote)
 - [What is a Git commit?](#what-is-a-git-commit)
+- [Initialize a Git repository](#initialize-a-git-repository)
 - [How to add files to the Staging area](#how-to-add-files-to-the-staging-area)
 - [How to remove files from the Staging area](#how-to-remove-files-from-the-staging-area)
 - [How to make commits](#how-to-make-commits)
   - [Git Shortcut: commit all tracked files](#git-shortcut-commit-all-tracked-files)
   - [Git Shortcut: commit with a short message](#git-shortcut-commit-with-a-short-message)
   - [A technicality about commits](#a-technicality-about-commits)
+- [How to undo local commits](#how-to-undo-local-commits)
 
 # WHAT IS GIT
 
@@ -116,6 +118,12 @@
 git status
 ```
 
+# Initialize a Git repository
+
+```
+git init
+```
+
 # How to add files to the Staging area
 
 - When you have files that you'd like to include in the next commit, you can add them to the **Staging area**.
@@ -214,3 +222,12 @@ git commit -am "Your message here."
 - In addition to the changes a commit also stores some metadata, such as the author and date of the commit.
 
 - An important thing that is stored is the parent commit: each commit knows what the previous commit was, and that is how we can construct a sequence of commits.
+
+# How to undo local commits
+
+- There are two ways to undo a commit:
+
+  - By telling Git to create a new commit which exactly undoes the changes of a previous commit (e.g. deleting lines of code instead of adding them).
+  - By telling Git to get rid of a commit entirely.
+
+- These are known as `git revert` and `git reset`.
