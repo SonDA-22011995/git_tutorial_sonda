@@ -5,7 +5,10 @@
   - [Remote](#remote)
 - [What is a Git commit?](#what-is-a-git-commit)
 - [How to add files to the Staging area](#how-to-add-files-to-the-staging-area)
-- [How to remove files from the Staging area 123](#how-to-remove-files-from-the-staging-area-123)
+- [How to remove files from the Staging area](#how-to-remove-files-from-the-staging-area)
+- [How to make commits](#how-to-make-commits)
+  - [Git Shortcut: commit all tracked files](#git-shortcut-commit-all-tracked-files)
+  - [Git Shortcut: commit with a short message](#git-shortcut-commit-with-a-short-message)
 
 # WHAT IS GIT
 
@@ -92,4 +95,53 @@ git add --all
 git add -A
 ```
 
-# How to remove files from the Staging area 123
+# How to remove files from the Staging area
+
+```
+# git recommend
+git restore --staged <file>
+
+git reset HEAD <file>
+```
+
+- Example: That would remove `models/user.py` from the **Staging Area**, but it would leave it in the **Working Area**. That means that you would not lose any changes you've made.
+
+```
+git reset HEAD models/user.py
+```
+
+- To discard changes in the working directory, first make sure a file is not in the **Staging Area**. Then, run this command:
+
+```
+git checkout -- models/user.py
+```
+
+# How to make commits
+
+- Once you've got all the file changes you'd like to commit in your Staging Area, you can make a commit out of them.
+
+```
+git commit
+```
+
+## Git Shortcut: commit all tracked files
+
+- As we've learned, a file becomes "tracked" when we've added it to a previous commit (and not deleted it from the repository)
+
+- That commits all tracked files, and that means we don't have to git add each of them individually.
+
+```
+git commit -a
+```
+
+## Git Shortcut: commit with a short message
+
+```
+git commit -m "Your message here."
+```
+
+- Note that you can chain this with the previous tip, and do:
+
+```
+git commit -am "Your message here."
+```
