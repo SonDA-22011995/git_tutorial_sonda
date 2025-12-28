@@ -9,6 +9,7 @@
 - [How to make commits](#how-to-make-commits)
   - [Git Shortcut: commit all tracked files](#git-shortcut-commit-all-tracked-files)
   - [Git Shortcut: commit with a short message](#git-shortcut-commit-with-a-short-message)
+  - [A technicality about commits](#a-technicality-about-commits)
 
 # WHAT IS GIT
 
@@ -16,6 +17,68 @@
 - Git repositories can be local (in your computer) or remote (in someone else’s computer).
 - All the Git repository information is stored in a folder called `.git`. When you initialize Git in a folder (such as your project), the `.git` folder is created. We’ll look at what’s inside `.git` shortly, but we can think of `.git` as essentially a database. Git is a tool we use to interact with that database.
 - **Working directory -> Staging area -> Committed -> Remote**
+
+```
+┌──────────────────┐
+│  Working Area    │
+│ (Working Tree)   │
+│                  │
+│  File changes    │
+└────────┬─────────┘
+         │  git add
+         ▼
+┌──────────────────┐
+│  Staging Area    │
+│     (Index)      │
+│                  │
+│  Ready to commit │
+└────────┬─────────┘
+         │  git commit
+         ▼
+┌──────────────────┐
+│   Local Repo     │
+│   (Committed)   │
+│                  │
+│  Saved locally   │
+└────────┬─────────┘
+         │  git push
+         ▼
+┌──────────────────┐
+│   Remote Repo    │
+│ (GitHub/GitLab)  │
+│                  │
+│  Shared code     │
+└──────────────────┘
+```
+
+```
+┌────────────────────┐
+│   Remote Repo      │
+│ (GitHub / GitLab)  │
+└─────────┬──────────┘
+          │  git fetch / git pull
+          │
+          ▼
+┌────────────────────┐
+│   Local Repo       │
+│   (Committed)     │
+└─────────┬──────────┘
+          │  git reset / git revert
+          │
+          ▼
+┌────────────────────┐
+│   Staging Area     │
+│     (Index)        │
+└─────────┬──────────┘
+          │  git restore --staged
+          │  git reset HEAD
+          ▼
+┌────────────────────┐
+│   Working Area     │
+│  (Working Tree)    │
+└────────────────────┘
+
+```
 
 ## Working area
 
@@ -145,3 +208,9 @@ git commit -m "Your message here."
 ```
 git commit -am "Your message here."
 ```
+
+## A technicality about commits
+
+- In addition to the changes a commit also stores some metadata, such as the author and date of the commit.
+
+- An important thing that is stored is the parent commit: each commit knows what the previous commit was, and that is how we can construct a sequence of commits.
