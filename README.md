@@ -462,3 +462,4 @@ git fetch -p
 ```
 
 # Merging branches in Git
+- sonda vô đối
