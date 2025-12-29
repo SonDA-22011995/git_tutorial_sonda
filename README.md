@@ -203,6 +203,9 @@ git reset HEAD models/user.py
 - To discard changes in the working directory, first make sure a file is not in the **Staging Area**. Then, run this command:
 
 ```
+# git recommend
+git restore models/user.py
+
 git checkout -- models/user.py
 ```
 
