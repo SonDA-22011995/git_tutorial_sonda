@@ -36,6 +36,10 @@
     - [Clean up local references to deleted remote branches](#clean-up-local-references-to-deleted-remote-branches)
 - [Merging branches in Git](#merging-branches-in-git)
 - [Merge conflicts and how to resolve them](#merge-conflicts-and-how-to-resolve-them)
+- [Working with GitHub](#working-with-github)
+  - [What are Forks?](#what-are-forks)
+  - [How to update your fork with new commits in the original repository](#how-to-update-your-fork-with-new-commits-in-the-original-repository)
+  - [What are Pull Requests?](#what-are-pull-requests)
 
 # WHAT IS GIT
 
@@ -477,3 +481,37 @@ git merge <branch-name>
 ```
 
 # Merge conflicts and how to resolve them
+
+# Working with GitHub
+
+## What are Forks?
+
+- You can fork a repository you don't own. That creates a copy of it under your account.
+
+- You can then use it as your own repository, and you can also use it to submit changes back to the original repository.
+
+- This is a very common flow for Open-Source Projects:
+
+  - A contributor will make a Fork of the Repository;
+  - Contributor will make changes to the code in their Fork;
+  - Contributor will submit the code changes back to the Repository;
+  - If changes are accepted, Contributor will close the Fork.
+  - If changes were not accepted, Contributor may make more changes to the Fork and submit changes again.
+
+## How to update your fork with new commits in the original repository
+
+- Sometimes you'll make a Fork and start making some changes, but then other people will make changes to the Original Repository.
+
+- You'll want to bring those changes into your Fork so that when you submit your changes, you are applying changes on top of the most up-to-date code (and not on the old code that was there when you made the Fork).
+
+- To do that, just navigate into your Fork repository and execute a `git pull` against the Original Repository
+
+```
+git pull <url_of_original_repository>
+```
+
+## What are Pull Requests?
+
+- When the time comes to submit your code changes back to the Original Repository, you will create a Pull Request (also called Merge Request, and often abbreviated to PR or MR).
+
+- A PR or MR is a request to merge your changes into the Original Repository. It contains the changes you want to make to the code, and also provides a space for Contributors to have a conversation.
