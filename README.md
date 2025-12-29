@@ -30,6 +30,10 @@
   - [Cloning the remote repository](#cloning-the-remote-repository)
 - [Git Branches](#git-branches)
   - [How to create a new branch](#how-to-create-a-new-branch)
+  - [How to delete branch](#how-to-delete-branch)
+    - [Delete a local branch](#delete-a-local-branch)
+    - [Delete a branch from the repository](#delete-a-branch-from-the-repository)
+    - [Clean up local references to deleted remote branches](#clean-up-local-references-to-deleted-remote-branches)
 - [Merging branches in Git](#merging-branches-in-git)
 
 # WHAT IS GIT
@@ -435,6 +439,26 @@ git checkout -b branch
 
 # move to new branch
 git checkout branch
+```
+
+## How to delete branch
+
+### Delete a local branch
+
+```
+git branch -d branch-name
+```
+
+### Delete a branch from the repository
+
+```
+git push origin --delete branch-name
+```
+
+### Clean up local references to deleted remote branches
+
+```
+git fetch -p
 ```
 
 # Merging branches in Git
