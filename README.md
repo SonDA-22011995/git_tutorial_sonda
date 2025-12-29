@@ -28,6 +28,9 @@
   - [Seeing changes in the remote](#seeing-changes-in-the-remote)
   - [Pulling changes from the remote](#pulling-changes-from-the-remote)
   - [Cloning the remote repository](#cloning-the-remote-repository)
+- [Git Branches](#git-branches)
+  - [How to create a new branch](#how-to-create-a-new-branch)
+- [Merging branches in Git](#merging-branches-in-git)
 
 # WHAT IS GIT
 
@@ -411,3 +414,17 @@ git clone https://github.com/yourusername/your-repo .
 ```
 
 - Remember to leave a space between the URL and the `.`!
+
+# Git Branches
+
+- Git allows us to keep unrelated changes separate through the use of branches.
+- For example, if you're thinking of adding a new feature to your program, you could put it in a separate branch so that only changes related to this new feature are there.
+- That means that other collaborators who want to work in the repository don't need to see your "work in progress". They can create their own branches for their own work.
+
+## How to create a new branch
+
+```
+git branch signup_web
+```
+
+# Merging branches in Git
