@@ -427,7 +427,14 @@ git clone https://github.com/yourusername/your-repo .
 ## How to create a new branch
 
 ```
+# create new branch
 git branch signup_web
+
+# create and move to new branch
+git checkout -b branch
+
+# move to new branch
+git checkout branch
 ```
 
 # Merging branches in Git
