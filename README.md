@@ -21,6 +21,13 @@
   - [git revert](#git-revert)
   - [git reset](#git-reset)
   - [How do you use them?](#how-do-you-use-them)
+- [Remote repositories and how to use them](#remote-repositories-and-how-to-use-them)
+  - [Creating a remote repository](#creating-a-remote-repository)
+  - [Adding the remote to your local](#adding-the-remote-to-your-local)
+  - [Pushing changes](#pushing-changes)
+  - [Seeing changes in the remote](#seeing-changes-in-the-remote)
+  - [Pulling changes from the remote](#pulling-changes-from-the-remote)
+  - [Cloning the remote repository](#cloning-the-remote-repository)
 
 # WHAT IS GIT
 
@@ -346,3 +353,61 @@ Date:   Fri Dec 13 13:21:19 2019 +0000
 ```
 git revert ae77aedd
 ```
+
+# Remote repositories and how to use them
+
+## Creating a remote repository
+
+## Adding the remote to your local
+
+- Now that you have a remote repository, you can link it with your local repository by following the instructions GitHub leaves for you
+
+```
+git remote add origin https://github.com/yourusername/your-repo.git
+```
+
+## Pushing changes
+
+- To push your commits to the repository, remember to first create commits in your repository and then add your remote.
+
+- Then, you can push to your branch using:
+
+```
+git push -u origin main  # or master
+```
+
+## Seeing changes in the remote
+
+- After you've made commits, GitHub will show you the latest code. You can also navigate to past commits.
+
+## Pulling changes from the remote
+
+- If you have two computers working off the same remote repository (e.g. two people, or one person with two devices), eventually one of the devices will be out of sync with the remote.
+
+- This happens if one device makes a commit and pushes it to the remote.
+
+- The other device must now pull the changes from the remote, before making any more changes.
+
+To do this:
+
+```
+git pull
+```
+
+## Cloning the remote repository
+
+- If you want to go to a fresh new device and download the entire remote repository, to set it up as a new local repository that you can work from, use `git clone`:
+
+```
+git clone https://github.com/yourusername/your-repo folder_name
+```
+
+- This will download `your_repo` into a new folder called `folder_name`, and set it up as a Git repository so you can make further commits. The remote repository will already be set up so you can push your new commits.
+
+- If you want to clone a repository into the folder you're currently in, you can use `.` instead of a folder name:
+
+```
+git clone https://github.com/yourusername/your-repo .
+```
+
+- Remember to leave a space between the URL and the `.`!
