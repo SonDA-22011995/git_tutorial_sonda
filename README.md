@@ -35,6 +35,7 @@
     - [Delete a branch from the repository](#delete-a-branch-from-the-repository)
     - [Clean up local references to deleted remote branches](#clean-up-local-references-to-deleted-remote-branches)
 - [Merging branches in Git](#merging-branches-in-git)
+- [Merge conflicts and how to resolve them](#merge-conflicts-and-how-to-resolve-them)
 
 # WHAT IS GIT
 
@@ -462,3 +463,17 @@ git fetch -p
 ```
 
 # Merging branches in Git
+
+- First step
+
+```
+git checkout master
+```
+
+- The second step
+
+```
+git merge <branch-name>
+```
+
+# Merge conflicts and how to resolve them
