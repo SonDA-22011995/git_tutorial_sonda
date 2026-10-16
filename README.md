@@ -24,6 +24,10 @@
 - [Remote repositories and how to use them](#remote-repositories-and-how-to-use-them)
   - [Creating a remote repository](#creating-a-remote-repository)
   - [Adding the remote to your local](#adding-the-remote-to-your-local)
+  - [Changing the URL of the existing remote](#changing-the-url-of-the-existing-remote)
+    - [Check the Existing Remote URL](#check-the-existing-remote-url)
+    - [Change the Existing Remote URL](#change-the-existing-remote-url)
+    - [Alternative: Remove and Re-add the Remote](#alternative-remove-and-re-add-the-remote)
   - [Pushing changes](#pushing-changes)
   - [Seeing changes in the remote](#seeing-changes-in-the-remote)
   - [Pulling changes from the remote](#pulling-changes-from-the-remote)
@@ -379,6 +383,49 @@ git revert ae77aedd
 
 ```
 git remote add origin https://github.com/yourusername/your-repo.git
+```
+
+## Changing the URL of the existing remote
+
+- If a remote named origin already exists, Git will return the following error when you try to add it again
+  - This means that you cannot add another remote with the same name. Instead, you can change the URL of the existing remote.
+
+```bash
+git remote add origin https://github.com/yourusername/your-repo.git
+
+# error: remote origin already exists.
+```
+
+### Check the Existing Remote URL
+
+- Before changing the URL, you should check the current remote configuration.
+- The output shows the remote name and its URL.
+  - fetch: The URL used to retrieve changes from the remote repository.
+  - push: The URL used to send local commits to the remote repository.
+
+```bash
+git remote -v
+
+# origin  https://github.com/username/old-repo.git (push)
+# origin  https://github.com/username/old-repo.git (fetch)
+```
+
+### Change the Existing Remote URL
+
+- To change the URL of an existing remote, use the following command: 
+  - Syntax: `git remote set-url <remote-name> <new-url>`
+
+```bash
+git remote set-url origin https://github.com/username/new-repo.git
+```
+
+### Alternative: Remove and Re-add the Remote
+
+- You can also remove the existing remote and add it again.
+
+```bash
+git remote remove origin
+git remote add origin https://github.com/SonDA-22011995/python_tutorial_sonda.git
 ```
 
 ## Pushing changes
