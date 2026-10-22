@@ -425,7 +425,7 @@ git remote set-url origin https://github.com/username/new-repo.git
 
 ```bash
 git remote remove origin
-git remote add origin https://github.com/SonDA-22011995/python_tutorial_sonda.git
+git remote add origin https://github.com/SonDA-22011995/python_tutorial_sonda.git 
 ```
 
 ## Pushing changes
@@ -473,6 +473,13 @@ git clone https://github.com/yourusername/your-repo .
 ```
 
 - Remember to leave a space between the URL and the `.`!
+
+- To download the source code repository to your local machine and check out a specific branch while limiting the clone to that branch.
+  - `--single-branch` avoids fetching the histories of other branches, reducing unnecessary data transfer
+
+```
+git clone --branch 18.0 --single-branch https://github.com/odoo/odoo.git
+```
 
 # Git Branches
 
